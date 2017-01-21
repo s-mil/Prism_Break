@@ -28,10 +28,10 @@ public class EnemyMoveScript : MonoBehaviour {
 			Flip ();
 			moveSpeed *= -1;
 		}
-			
-	}
+    }
 
-	public void Flip()
+
+    public void Flip()
 	{
 		// Multiply the x component of localScale by -1.
 		Vector3 enemyScale = transform.localScale;

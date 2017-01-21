@@ -3,6 +3,9 @@ using System.Collections;
 
 public class Rocket : MonoBehaviour 
 {
+    private Gun gun;
+    bool hasCollided = false;
+
 	public GameObject explosion;		// Prefab of explosion effect.
 
 
@@ -10,6 +13,9 @@ public class Rocket : MonoBehaviour
 	{
 		// Destroy the rocket after 2 seconds if it doesn't get destroyed before then.
 		Destroy(gameObject, 2);
+        GameObject gunObject = GameObject.Find("Gun");
+        if(gunObject)    
+            gun = gunObject.GetComponent<Gun>();
 	}
 
 
@@ -24,18 +30,39 @@ public class Rocket : MonoBehaviour
 	
 	void OnTriggerEnter2D (Collider2D col) 
 	{
-		// If it hits an enemy...
-		if(col.tag == "Enemy")
-		{
-			// ... find the Enemy script and call the Hurt function.
-			col.gameObject.GetComponent<Enemy>().Hurt();
+        if (!hasCollided)
+        {
+            Debug.Log(gameObject.name);
+            // If a bullet hits an enemy of the same type
+            if (col.tag == "Enemy" && (Enemy.enemyType == Gun.bulletType))
+            {
+                // ... find the Enemy script and call the Hurt function.
+                col.gameObject.GetComponent<Enemy>().Hurt();
 
-			// Call the explosion instantiation.
-			OnExplode();
+                // Call the explosion instantiation.
+                OnExplode();
 
-			// Destroy the rocket.
-			Destroy (gameObject);
-		}
+                // Destroy the rocket.
+                Destroy(gameObject);
+                Destroy(col.gameObject);
+            }
+            // If a bullet hits an enemy of the wrong type
+            else if (col.tag == "Enemy" && (Enemy.enemyType != Gun.bulletType))
+            {
+                GetComponent<Rigidbody2D>().velocity = new Vector2(GetComponent<Rigidbody2D>().velocity.x * -1f, GetComponent<Rigidbody2D>().velocity.y);
+            }
+
+
+            // Otherwise if the player manages to shoot himself...
+            else if (col.gameObject.tag == "Player")
+            {
+                // Instantiate the explosion and destroy the rocket.
+                OnExplode();
+                Destroy(gameObject);
+            }
+            hasCollided = true;
+        }
+
 		// Otherwise if the player manages to shoot himself...
 		else if(col.gameObject.tag != "Player")
 		{

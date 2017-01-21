@@ -125,7 +125,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4541949683267014, guid: a09db1cf50642df41927abed2e24cda5, type: 2}
       propertyPath: m_LocalPosition.z
-      value: -1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4541949683267014, guid: a09db1cf50642df41927abed2e24cda5, type: 2}
       propertyPath: m_LocalRotation.x
@@ -184,6 +184,18 @@ Prefab:
         type: 2}
       propertyPath: m_Color.a
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1888491685483910, guid: a09db1cf50642df41927abed2e24cda5, type: 2}
+      propertyPath: m_Name
+      value: Player
+      objectReference: {fileID: 0}
+    - target: {fileID: 4311235387755194, guid: a09db1cf50642df41927abed2e24cda5, type: 2}
+      propertyPath: m_RootOrder
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4978319617266040, guid: a09db1cf50642df41927abed2e24cda5, type: 2}
+      propertyPath: m_RootOrder
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 114920220488379224, guid: a09db1cf50642df41927abed2e24cda5, type: 2}
@@ -372,7 +384,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 4c5736ea0764d49c3a6adc2250d33f0f, type: 2}
       propertyPath: m_LocalPosition.z
-      value: -9.9313965
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 4c5736ea0764d49c3a6adc2250d33f0f, type: 2}
       propertyPath: m_LocalRotation.x
