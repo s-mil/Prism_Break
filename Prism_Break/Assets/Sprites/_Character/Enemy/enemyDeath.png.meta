@@ -1,15 +1,33 @@
 fileFormatVersion: 2
-guid: 6f2fe0899144d5743aa809c51de10451
-timeCreated: 1485007080
+guid: 160a4191c8c86e349abdf68c24f98c83
+timeCreated: 1485036723
 licenseType: Free
 TextureImporter:
   fileIDToRecycleName:
-    21300000: playerIdleSpriteSheet_0
-    21300002: playerIdleSpriteSheet_1
-    21300004: playerIdleSpriteSheet_2
-    21300006: playerIdleSpriteSheet_3
-    21300008: playerIdleSpriteSheet_4
-    21300010: playerIdleSpriteSheet_5
+    21300000: enemyDeath_0
+    21300002: enemyDeath_1
+    21300004: enemyDeath_2
+    21300006: enemyDeath_3
+    21300008: enemyDeath_4
+    21300010: enemyDeath_5
+    21300012: enemyDeath_6
+    21300014: enemyDeath_7
+    21300016: enemyDeath_8
+    21300018: enemyDeath_9
+    21300020: enemyDeath_10
+    21300022: enemyDeath_11
+    21300024: enemyDeath_12
+    21300026: enemyDeath_13
+    21300028: enemyDeath_14
+    21300030: enemyDeath_15
+    21300032: enemyDeath_16
+    21300034: enemyDeath_17
+    21300036: enemyDeath_18
+    21300038: enemyDeath_19
+    21300040: enemyDeath_20
+    21300042: enemyDeath_21
+    21300044: enemyDeath_22
+    21300046: enemyDeath_23
   serializedVersion: 4
   mipmaps:
     mipMapMode: 0
@@ -76,80 +94,54 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: playerIdleSpriteSheet_0
+      name: enemyDeath_0
       rect:
         serializedVersion: 2
-        x: 79
-        y: 51
-        width: 351
-        height: 471
+        x: 100
+        y: 50
+        width: 700
+        height: 700
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: playerIdleSpriteSheet_1
+      name: enemyDeath_1
       rect:
         serializedVersion: 2
-        x: 578
-        y: 55
-        width: 342
-        height: 454
+        x: 1000
+        y: 50
+        width: 700
+        height: 700
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: playerIdleSpriteSheet_2
+      name: enemyDeath_22
       rect:
         serializedVersion: 2
-        x: 1082
-        y: 55
-        width: 346
-        height: 426
+        x: 1900
+        y: 50
+        width: 700
+        height: 700
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: playerIdleSpriteSheet_3
+      name: enemyDeath_23
       rect:
         serializedVersion: 2
-        x: 1590
-        y: 56
-        width: 339
-        height: 406
+        x: 2725
+        y: 25
+        width: 850
+        height: 700
       alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      tessellationDetail: 0
-    - serializedVersion: 2
-      name: playerIdleSpriteSheet_4
-      rect:
-        serializedVersion: 2
-        x: 2088
-        y: 55
-        width: 343
-        height: 430
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      tessellationDetail: 0
-    - serializedVersion: 2
-      name: playerIdleSpriteSheet_5
-      rect:
-        serializedVersion: 2
-        x: 2584
-        y: 55
-        width: 343
-        height: 448
-      alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
