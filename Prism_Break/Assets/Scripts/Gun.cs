@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿
+using UnityEngine;
 using System.Collections;
 
 public class Gun : MonoBehaviour
@@ -22,8 +23,9 @@ public class Gun : MonoBehaviour
 	void Update ()
 	{
 		// If the fire button is pressed...
-		if(Input.GetButtonDown("BButton"))
+		if(Input.GetButtonDown("R1") || Input.GetButtonDown("BButton"))
 		{
+            Debug.Log("shooting");
 			// ... set the animator Shoot trigger parameter and play the audioclip.
 			anim.SetTrigger("Shoot");
 			GetComponent<AudioSource>().Play();
