@@ -30,7 +30,6 @@ public class Rocket : MonoBehaviour
 	
 	void OnTriggerEnter2D (Collider2D col) 
 	{
-<<<<<<< HEAD
         if (!hasCollided)
         {
             Debug.Log(gameObject.name);
@@ -47,13 +46,10 @@ public class Rocket : MonoBehaviour
                 Destroy(gameObject);
                 Destroy(col.gameObject);
             }
-            //   print("Name: " + col.gameObject.tag);
             // If a bullet hits an enemy of the wrong type
             else if (col.tag == "Enemy" && (Enemy.enemyType != Gun.bulletType))
             {
-                //  print("Reverse" + Time.frameCount);
                 GetComponent<Rigidbody2D>().velocity = new Vector2(GetComponent<Rigidbody2D>().velocity.x * -1f, GetComponent<Rigidbody2D>().velocity.y);
-                //gun.reverseSpeed();
             }
 
 
@@ -66,20 +62,7 @@ public class Rocket : MonoBehaviour
             }
             hasCollided = true;
         }
-    }
-=======
-		// If it hits an enemy...
-		if(col.tag == "Enemy")
-		{
-			// ... find the Enemy script and call the Hurt function.
-			col.gameObject.GetComponent<Enemy>().Hurt();
 
-			// Call the explosion instantiation.
-			OnExplode();
-
-			// Destroy the rocket.
-			Destroy (gameObject);
-		}
 		// Otherwise if the player manages to shoot himself...
 		else if(col.gameObject.tag != "Player")
 		{
@@ -88,5 +71,4 @@ public class Rocket : MonoBehaviour
 			Destroy (gameObject);
 		}
 	}
->>>>>>> 7a21d323a3268fc346997395412e42af9692985f
 }
