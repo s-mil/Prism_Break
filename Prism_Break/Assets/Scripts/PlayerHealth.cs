@@ -19,7 +19,7 @@ public class PlayerHealth : MonoBehaviour
 	{
 		// Setting up references.
 		playerControl = GetComponent<PlayerControl>();
-		healthBar = GameObject.Find("HealthBar").GetComponent<SpriteRenderer>();
+		//healthBar = GameObject.Find("HealthBar").GetComponent<SpriteRenderer>();
 		anim = GetComponent<Animator>();
 	}
 
