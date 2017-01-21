@@ -50,6 +50,7 @@ public class Enemy : MonoBehaviour
 		// If the enemy has one hit point left and has a damagedEnemy sprite...
 		if(HP == 1 && damagedEnemy != null)
 			// ... set the sprite renderer's sprite to be the damagedEnemy sprite.
+
 			ren.sprite = damagedEnemy;
 			
 		// If the enemy has zero or fewer hit points and isn't dead yet...
