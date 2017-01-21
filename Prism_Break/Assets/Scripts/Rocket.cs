@@ -30,8 +30,8 @@ public class Rocket : MonoBehaviour
 	
 	void OnTriggerEnter2D (Collider2D col) 
 	{
-        if (!hasCollided)
-        {
+       if (!hasCollided)
+       {
             Debug.Log(gameObject.name);
             // If a bullet hits an enemy of the same type
             if (col.tag == "Enemy" && (Enemy.enemyType == Gun.bulletType))
@@ -49,9 +49,9 @@ public class Rocket : MonoBehaviour
             // If a bullet hits an enemy of the wrong type
             else if (col.tag == "Enemy" && (Enemy.enemyType != Gun.bulletType))
             {
+                Debug.Log("Mis-Type Collision");
                 GetComponent<Rigidbody2D>().velocity = new Vector2(GetComponent<Rigidbody2D>().velocity.x * -1f, GetComponent<Rigidbody2D>().velocity.y);
             }
-
 
             // Otherwise if the player manages to shoot himself...
             else if (col.gameObject.tag == "Player")
@@ -60,11 +60,11 @@ public class Rocket : MonoBehaviour
                 OnExplode();
                 Destroy(gameObject);
             }
-            hasCollided = true;
+           // hasCollided = true;
         }
 
 		// Otherwise if the player manages to shoot himself...
-		else if(col.gameObject.tag != "Player")
+		else if(col.gameObject.tag == "Player")
 		{
 			// Instantiate the explosion and destroy the rocket.
 			OnExplode();

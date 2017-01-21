@@ -16,7 +16,7 @@ public class EnemyMoveScript : MonoBehaviour {
 	void Update () {
 		
 		transform.Translate (new Vector3 (moveSpeed, 0, 0) * Time.deltaTime);
-		if (transform.position.x <= -2880 || transform.position.x >= 2880) {
+		if (transform.position.x <= -100 || transform.position.x >= 100) {
 			Flip ();
 			moveSpeed *= -1;
 		}
