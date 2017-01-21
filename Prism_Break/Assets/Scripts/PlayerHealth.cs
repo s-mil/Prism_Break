@@ -6,7 +6,7 @@ public class PlayerHealth : MonoBehaviour
 	public float health = 3f;					// The player's health.
 	public float repeatDamagePeriod = 2f;		// How frequently the player can be damaged.
 	public AudioClip[] ouchClips;				// Array of clips to play when the player is damaged.
-	public float hurtForce = 10f;				// The force with which the player is pushed when hurt.
+	public float hurtForce = 400f;				// The force with which the player is pushed when hurt.
 	public float damageAmount = 1f;		    	// The amount of damage to take when enemies touch the player
 
 	private SpriteRenderer healthBar;			// Reference to the sprite renderer of the health bar.
