@@ -7,10 +7,6 @@ public class Rocket : MonoBehaviour
     private Gun gun;
 	public GameObject explosion;		// Prefab of explosion effect.
     public ParticleSystem[] ps;
-	public AudioClip playerDeath;
-	public AudioClip enemyDeath;
-
-
 
 	void Start () 
 	{
@@ -40,20 +36,18 @@ public class Rocket : MonoBehaviour
 	{
         // If a bullet hits an enemy of the same type
         EnemyMoveScript enemy = col.gameObject.GetComponent<EnemyMoveScript>();
-
         if (enemy != null)
         {
             if (col.tag == "Enemy" && (enemy.type == Gun.bulletType))
-            {
-				StartCoroutine(enemyDing());
+            {   
                 // ... find the Enemy script and call the Hurt function.
                 col.gameObject.GetComponent<Enemy>().Hurt();
- 
+
                 // Call the explosion instantiation.
                 OnExplode();
 
                 // Destroy the rocket.
-
+                Destroy(gameObject);
                 Destroy(col.gameObject);
             }
             // If a bullet hits an enemy of the wrong type
@@ -66,25 +60,17 @@ public class Rocket : MonoBehaviour
         // Otherwise if the player manages to shoot himself...
         else if (col.gameObject.tag == "Player")
         {
-			StartCoroutine(playerDing());
             // Instantiate the explosion and destroy the rocket.
             OnExplode();
+            Destroy(gameObject);
         }
-	}
 
-	IEnumerator playerDing()
-	{
-		AudioSource audio = GetComponent<AudioSource>();
-		audio.PlayOneShot(playerDeath);
-		yield return new WaitForSeconds(1.4f);
-		Destroy(gameObject);
-	}
-
-	IEnumerator enemyDing()
-	{
-		AudioSource audio = GetComponent<AudioSource>();
-		audio.PlayOneShot(enemyDeath);
-		yield return new WaitForSeconds(1.4f);
-		Destroy(gameObject);
+        // Otherwise if the player manages to shoot himself...
+        else if (col.gameObject.tag == "Player")
+        {
+            // Instantiate the explosion and destroy the rocket.
+            OnExplode();
+            Destroy(gameObject);
+        }
 	}
 }
