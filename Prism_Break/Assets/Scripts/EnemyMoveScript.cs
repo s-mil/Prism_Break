@@ -15,15 +15,12 @@ public class EnemyMoveScript : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-
+        //calculates the motion of the sin curve
         float testx = this.transform.position.x / (64 / Mathf.PI);
         float line = Mathf.Cos(Time.realtimeSinceStartup * Mathf.PI + 0.5890486f + testx);
         
         if (line > this.transform.position.y / 36 != this.type)
-        {
-            this.type = !this.type;
-            //Executes when flips (Or reasonably close)
-        }
+            this.type = !this.type;     //Executes when enemy changes type, or close
 
         transform.Translate (new Vector3 (moveSpeed, 0, 0) * Time.deltaTime);
 		if (transform.position.x <= -100 || transform.position.x >= 100) {
