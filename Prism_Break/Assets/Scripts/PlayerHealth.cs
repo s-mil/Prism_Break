@@ -39,7 +39,7 @@ public class PlayerHealth : MonoBehaviour
 					TakeDamage(col.transform); 
 					lastHitTime = Time.time; 
 				}
-				// If the player doesn't have health, do some stuff, let him fall into the river to reload the level.
+				// If the player doesn't have health, kill him
 				else
 				{
 					// ... disable user Player Control script
@@ -48,8 +48,8 @@ public class PlayerHealth : MonoBehaviour
 					// ... Trigger the 'Die' animation state
 					anim.SetTrigger("Die");
 
-                    Application.LoadLevel(sceneKill);
-
+                    // Go to killscreen
+                    Application.LoadLevel("sceneKill");
                 }
 			}
 		}
