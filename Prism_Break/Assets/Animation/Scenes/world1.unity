@@ -2305,6 +2305,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 0.1
   x: 0
+  increment: 0.003
 --- !u!1001 &790448641
 Prefab:
   m_ObjectHideFlags: 0
@@ -5837,6 +5838,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 0.05
   x: 0
+  increment: 0.005
 --- !u!1001 &1259498724
 Prefab:
   m_ObjectHideFlags: 0
