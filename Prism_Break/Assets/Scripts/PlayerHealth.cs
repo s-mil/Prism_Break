@@ -25,10 +25,16 @@ public class PlayerHealth : MonoBehaviour
 
 
 	void OnCollisionEnter2D (Collision2D col)
-	{
+    {
+        if (col.gameObject.tag == "Enemy" || col.gameObject.tag == "Bullet")
+            TakeDamage();
+    }
+
+    public void AssessDamage()
+    {
 		// If the colliding gameobject is an Enemy...
-		if(col.gameObject.tag == "Enemy" || col.gameObject.tag == "Bullet")
-		{
+		//if(col.gameObject.tag == "Enemy" || col.gameObject.tag == "Bullet")
+		//{
 			// ... and if the time exceeds the time of the last hit plus the time between hits...
 			if (Time.time > lastHitTime + repeatDamagePeriod) 
 			{
@@ -52,7 +58,7 @@ public class PlayerHealth : MonoBehaviour
                     Application.LoadLevel("sceneKill");
                 }
 			}
-		}
+		//}
 	}
 
 
@@ -60,7 +66,7 @@ public class PlayerHealth : MonoBehaviour
 	{
 		// Reduce the player's health by 1.
 		health -= damageAmount;
-
+        print("health: " + health);
 		// Update what the health bar looks like.
 		UpdateHealthBar();
 
