@@ -37,10 +37,10 @@ public class PlayerControl : MonoBehaviour
 	void Update()
 	{
         // The player is grounded if it is not moving up or down
-        if (hero.GetComponent<Rigidbody2D>().velocity.y == 0)
+        /*if (hero.GetComponent<Rigidbody2D>().velocity.y == 0)
             grounded = true;
         else
-            grounded = false;
+            grounded = false;*/
 
         // If the jump button is pressed and the player is grounded then the player should jump.
 		if (Input.GetButtonDown ("AButton") && grounded) {
