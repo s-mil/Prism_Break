@@ -9,10 +9,12 @@ public class EnemyMoveScript : MonoBehaviour {
     public bool type = true;
     public Sprite WhiteEnemy;
     public Sprite BlackEnemy;
+	public float startX;
 
     // Use this for initialization
     void Start () {
-		
+		Flip ();
+		startX = transform.position.x;
 	}
 	
 	// Update is called once per frame
@@ -25,7 +27,7 @@ public class EnemyMoveScript : MonoBehaviour {
             this.type = !this.type;     //Executes when enemy changes type, or close
 
         transform.Translate (new Vector3 (moveSpeed, 0, 0) * Time.deltaTime);
-		if (transform.position.x <= -100 || transform.position.x >= 100) {
+		if (transform.position.x <= startX-2 || transform.position.x >= startX+2) {
 			Flip ();
 			moveSpeed *= -1;
 		}

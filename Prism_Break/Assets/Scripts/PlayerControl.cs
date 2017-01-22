@@ -10,7 +10,7 @@ public class PlayerControl : MonoBehaviour
 
 	public float moveForce = 365f;			// Amount of force added to move the player left and right.
 	public float maxSpeed = 5f;				// The fastest the player can travel in the x axis.
-	public AudioClip[] jumpClips;			// Array of clips for when the player jumps.
+	public AudioClip jumpClip;			// Array of clips for when the player jumps.
 	public float jumpForce = 20f;			// Amount of force added when the player jumps.
 
 
@@ -18,6 +18,7 @@ public class PlayerControl : MonoBehaviour
 	private bool grounded = false;			// Whether or not the player is grounded.
 	float groundRadius = .2f;
 	public LayerMask whatIsGround;
+    public Transform player;
 
 	Animator anim;					// Reference to the player's animator component.
 
@@ -91,6 +92,9 @@ public class PlayerControl : MonoBehaviour
 		{
 			// Set the Jump animator trigger parameter.
 			anim.SetTrigger("Jump");
+
+			AudioSource audio = GetComponent<AudioSource>();
+			audio.PlayOneShot(jumpClip);
 
 			// Add a vertical force to the player.
 			hero.GetComponent<Rigidbody2D>().velocity = new Vector2(0f, jumpForce);

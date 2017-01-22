@@ -1,11 +1,10 @@
-﻿
-using UnityEngine;
+﻿using UnityEngine;
 using System.Collections;
 
 public class Gun : MonoBehaviour
 {
 	public Rigidbody2D rocket;				// Prefab of the rocket.
-	public float speed = 20f;				// The speed the rocket will fire at.
+	public float speed = 15f;				// The speed the rocket will fire at.
 
 
 	private PlayerControl playerCtrl;		// Reference to the PlayerControl script.
@@ -37,8 +36,8 @@ public class Gun : MonoBehaviour
 
             Debug.Log("shooting");
 			// ... set the animator Shoot trigger parameter and play the audioclip.
-			//anim.SetTrigger("Shoot");
-			//GetComponent<AudioSource>().Play();
+			anim.SetTrigger("Shoot");
+			GetComponent<AudioSource>().Play();
 
 			// If the player is facing right...
 			if(playerCtrl.facingRight)
