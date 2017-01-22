@@ -1,25 +1,29 @@
 ﻿using UnityEngine;
 using System.Collections;
 
+
 public class Rocket : MonoBehaviour 
 {
     private Gun gun;
-    bool hasCollided = false;
-
 	public GameObject explosion;		// Prefab of explosion effect.
-
+    public ParticleSystem[] ps;
 
 	void Start () 
 	{
-		// Destroy the rocket after 2 seconds if it doesn't get destroyed before then.
-		Destroy(gameObject, 2);
+        if (Gun.bulletType)
+            ps[0].Stop();
+        else
+            ps[1].Stop();
+        // Destroy the rocket after 2 seconds if it doesn't get destroyed before then.
+        Destroy(gameObject, 2);
+        ps = GetComponentsInChildren<ParticleSystem>();
+        // If you can find a reference to the gun make a refrence
         GameObject gunObject = GameObject.Find("Gun");
         if(gunObject)    
             gun = gunObject.GetComponent<Gun>();
-	}
+    }
 
-
-	void OnExplode()
+    void OnExplode()
 	{
 		// Create a quaternion with a random rotation in the z-axis.
 		Quaternion randomRotation = Quaternion.Euler(0f, 0f, Random.Range(0f, 360f));
@@ -30,11 +34,11 @@ public class Rocket : MonoBehaviour
 	
 	void OnTriggerEnter2D (Collider2D col) 
 	{
-        if (!hasCollided)
+        // If a bullet hits an enemy of the same type
+        EnemyMoveScript enemy = col.gameObject.GetComponent<EnemyMoveScript>();
+        if (enemy != null)
         {
-            Debug.Log(gameObject.name);
-            // If a bullet hits an enemy of the same type
-            if (col.tag == "Enemy" && (Enemy.enemyType == Gun.bulletType))
+            if (col.tag == "Enemy" && (enemy.type == Gun.bulletType))
             {
                 // ... find the Enemy script and call the Hurt function.
                 col.gameObject.GetComponent<Enemy>().Hurt();
@@ -47,28 +51,26 @@ public class Rocket : MonoBehaviour
                 Destroy(col.gameObject);
             }
             // If a bullet hits an enemy of the wrong type
-            else if (col.tag == "Enemy" && (Enemy.enemyType != Gun.bulletType))
+            else if (col.tag == "Enemy" && (enemy.type != Gun.bulletType))
             {
+                Debug.Log("Mis-Type Collision");
                 GetComponent<Rigidbody2D>().velocity = new Vector2(GetComponent<Rigidbody2D>().velocity.x * -1f, GetComponent<Rigidbody2D>().velocity.y);
             }
-
-
-            // Otherwise if the player manages to shoot himself...
-            else if (col.gameObject.tag == "Player")
-            {
-                // Instantiate the explosion and destroy the rocket.
-                OnExplode();
-                Destroy(gameObject);
-            }
-            hasCollided = true;
+        }
+        // Otherwise if the player manages to shoot himself...
+        else if (col.gameObject.tag == "Player")
+        {
+            // Instantiate the explosion and destroy the rocket.
+            OnExplode();
+            Destroy(gameObject);
         }
 
-		// Otherwise if the player manages to shoot himself...
-		else if(col.gameObject.tag != "Player")
-		{
-			// Instantiate the explosion and destroy the rocket.
-			OnExplode();
-			Destroy (gameObject);
-		}
+        // Otherwise if the player manages to shoot himself...
+        else if (col.gameObject.tag == "Player")
+        {
+            // Instantiate the explosion and destroy the rocket.
+            OnExplode();
+            Destroy(gameObject);
+        }
 	}
 }

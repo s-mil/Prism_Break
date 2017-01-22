@@ -130,10 +130,12 @@ Prefab:
       propertyPath: m_RootOrder
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 50711793838575428, guid: a09db1cf50642df41927abed2e24cda5,
+
+    - target: {fileID: 82195472049188814, guid: a09db1cf50642df41927abed2e24cda5,
         type: 2}
-      propertyPath: m_Mass
-      value: 1
+      propertyPath: spreadCustomCurve.m_RotationOrder
+      value: 0
+
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: a09db1cf50642df41927abed2e24cda5, type: 2}
@@ -332,6 +334,11 @@ BoxCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Size: {x: 7.9999995, y: 3}
+--- !u!4 &439936013 stripped
+Transform:
+  m_PrefabParentObject: {fileID: 4541949683267014, guid: a09db1cf50642df41927abed2e24cda5,
+    type: 2}
+  m_PrefabInternal: {fileID: 127631248}
 --- !u!1 &486656275
 GameObject:
   m_ObjectHideFlags: 0
@@ -1391,7 +1398,9 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: -18}
   m_LocalScale: {x: 2, y: 2, z: 2}
   m_Children: []
-  m_Father: {fileID: 1108755080}
+
+  m_Father: {fileID: 439936013}
+
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1833124985

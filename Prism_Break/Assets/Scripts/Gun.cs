@@ -28,11 +28,11 @@ public class Gun : MonoBehaviour
 	void Update ()
 	{
         // If the fire button is pressed...
-        if (Input.GetButtonDown("R1") || Input.GetButtonDown("L1"))
+        if (Input.GetButtonDown("R1") || Input.GetButtonDown("L1") || Input.GetButtonDown("j") || Input.GetButtonDown("k"))
         {
-            if (Input.GetButtonDown("R1"))
+            if (Input.GetButtonDown("R1") || Input.GetButtonDown("j"))
                 bulletType = true;
-            else if (Input.GetButtonDown("L1"))
+            else if (Input.GetButtonDown("L1") || Input.GetButtonDown("k"))
                 bulletType = false;
 
             Debug.Log("shooting");
