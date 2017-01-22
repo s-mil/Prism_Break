@@ -15,3 +15,5 @@ EditorBuildSettings:
     path: Assets/Animation/Scenes/sceneMain2.unity
   - enabled: 1
     path: Assets/Animation/Scenes/sceneBoss.unity
+  - enabled: 1
+    path: Assets/Animation/Scenes/world1.unity

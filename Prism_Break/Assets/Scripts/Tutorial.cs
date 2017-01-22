@@ -19,7 +19,7 @@ public class Tutorial : MonoBehaviour {
 
 	void Update(){
 		if (Input.GetButtonDown ("AButton")) {
-			Application.LoadLevel ("sceneBoss");
+			Application.LoadLevel ("world1");
 		}
 	}
 }
