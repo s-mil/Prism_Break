@@ -8,19 +8,30 @@ public class BossAI : MonoBehaviour
     Random rnd = new Random();
     private bool fired;
     private int shots;
-    private int health = 10;
+    private int bossHealth = 1;
 
     void Start()
     {
         fired = false;
     }
+    void OnTriggerEnter2D(Collider2D col)
+    {
+        if (col.tag == "Bullet")
+        {
+            print("hit");
+            bossHealth--;
+        }
+            bossHealth--;
+    }
     void Update()
     {
-        if (collider.gameObject.tag == "bullet")
+        print ("Boss Health = " + bossHealth);
+        if (bossHealth <= 0)
         {
-            health--;
+            Destroy(gameObject);
+            Application.LoadLevel("sceneWin");
         }
-)
+
         if (!fired)
         {
             Invoke("bossAttack", Random.Range(.1f,1));

@@ -10,12 +10,14 @@ public class Rocket : MonoBehaviour
     public AudioClip playerDeath;
     public AudioClip enemyDeath;
     private PlayerHealth player;
+    private BossAI boss;
 
 
 
 
     void Start()
     {
+        boss = GameObject.Find("RedBoss").GetComponent<BossAI>();
         player = GameObject.Find("Player").GetComponent<PlayerHealth>();
         if (Gun.bulletType)
             ps[0].Stop();
@@ -41,6 +43,8 @@ public class Rocket : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D col)
     {
+        //if (col.tag == "Boss")
+           // Destroy(col.gameObject);
         // If a bullet hits an enemy of the same type
         EnemyMoveScript enemy = col.gameObject.GetComponent<EnemyMoveScript>();
 
