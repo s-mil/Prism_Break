@@ -7,9 +7,11 @@ public class EnemyMoveScript : MonoBehaviour {
 	public float moveSpeed;
 	public int HP = 2;
     public bool type = true;
+    public Sprite WhiteEnemy;
+    public Sprite BlackEnemy;
 
-	// Use this for initialization
-	void Start () {
+    // Use this for initialization
+    void Start () {
 		
 	}
 	
@@ -27,7 +29,12 @@ public class EnemyMoveScript : MonoBehaviour {
 			Flip ();
 			moveSpeed *= -1;
 		}
-	}
+
+        if (this.type == true)
+            this.gameObject.GetComponent<SpriteRenderer>().sprite = WhiteEnemy;
+        else
+            this.gameObject.GetComponent<SpriteRenderer>().sprite = BlackEnemy;
+    }
 
 	void OnCollisionEnter2D(Collision2D col) {
 		if (col.gameObject.tag == "Player")
