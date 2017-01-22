@@ -17,7 +17,7 @@ public class fireball : MonoBehaviour {
     {
         if (col.tag == "Player")
         {
-            print ("payer take damage");
+            print ("player took damage from fireball");
             player.AssessDamage();
         }
     }

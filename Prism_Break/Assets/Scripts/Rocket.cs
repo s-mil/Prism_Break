@@ -9,11 +9,14 @@ public class Rocket : MonoBehaviour
     public ParticleSystem[] ps;
     public AudioClip playerDeath;
     public AudioClip enemyDeath;
+    private PlayerHealth player;
+
 
 
 
     void Start()
     {
+        player = GameObject.Find("Player").GetComponent<PlayerHealth>();
         if (Gun.bulletType)
             ps[0].Stop();
         else
@@ -67,6 +70,7 @@ public class Rocket : MonoBehaviour
             // Otherwise if the player manages to shoot himself...
             else if (col.gameObject.tag == "Player")
             {
+                player.AssessDamage();
                 StartCoroutine(playerDing());
                 // Instantiate the explosion and destroy the rocket.
                 OnExplode();

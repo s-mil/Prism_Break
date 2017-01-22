@@ -26,15 +26,13 @@ public class PlayerHealth : MonoBehaviour
 
 	void OnCollisionEnter2D (Collision2D col)
     {
-        if (col.gameObject.tag == "Enemy" || col.gameObject.tag == "Bullet")
+        if (col.gameObject.tag == "Enemy")
             TakeDamage();
     }
 
     public void AssessDamage()
     {
-		// If the colliding gameobject is an Enemy...
-		//if(col.gameObject.tag == "Enemy" || col.gameObject.tag == "Bullet")
-		//{
+
 			// ... and if the time exceeds the time of the last hit plus the time between hits...
 			if (Time.time > lastHitTime + repeatDamagePeriod) 
 			{
@@ -58,7 +56,6 @@ public class PlayerHealth : MonoBehaviour
                     Application.LoadLevel("sceneKill");
                 }
 			}
-		//}
 	}
 
 
