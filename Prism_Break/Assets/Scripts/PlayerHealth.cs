@@ -21,8 +21,33 @@ public class PlayerHealth : MonoBehaviour
 		playerControl = GetComponent<PlayerControl>();
 		//healthBar = GameObject.Find("HealthBar").GetComponent<SpriteRenderer>();
 		anim = GetComponent<Animator>();
+		GemCreate ();
 	}
 
+
+	void GemCreate(){
+		switch (health)
+		{
+		case 0:
+			Application.LoadLevel ("sceneKill");
+			break;
+		case 1:
+			Console.WriteLine("Case 1");
+			break;
+		case 2:
+			Console.WriteLine("Case 2");
+			break;
+		case 3:
+
+		case 4:
+
+		case 5:
+			
+		default:
+			Console.WriteLine("Default case");
+			break;
+		}
+	}
 
 	void OnCollisionEnter2D (Collision2D col)
     {
