@@ -22,7 +22,7 @@ GameObject:
   m_Layer: 9
   m_Name: groundCheck
   m_TagString: Untagged
-  m_Icon: {fileID: -2065832391, guid: 0000000000000000d000000000000000, type: 0}
+  m_Icon: {fileID: 419385456094870383, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -58,6 +58,7 @@ GameObject:
   - component: {fileID: 58204028273198640}
   - component: {fileID: 95170786815067322}
   - component: {fileID: 212904042705261094}
+  - component: {fileID: 114624342522567234}
   m_Layer: 9
   m_Name: player
   m_TagString: Player
@@ -85,7 +86,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1888491685483910}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: -4.07, y: 2.12, z: 0}
   m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
   m_Children:
   - {fileID: 4978319617266040}
@@ -100,7 +101,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1564620742114942}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 5712.185, y: -1.8599277, z: 0}
+  m_LocalPosition: {x: -0.33, y: -2.48, z: 0}
   m_LocalScale: {x: 2.4, y: 2.4, z: 2.4}
   m_Children: []
   m_Father: {fileID: 4541949683267014}
@@ -117,7 +118,7 @@ Rigidbody2D:
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
-  m_Mass: 100
+  m_Mass: 1
   m_LinearDrag: 0
   m_AngularDrag: 0.05
   m_GravityScale: 1
@@ -243,7 +244,7 @@ Animator:
   m_GameObject: {fileID: 1888491685483910}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: f4bf0240ee28bb043930b63b86b4e7c4, type: 2}
+  m_Controller: {fileID: 9100000, guid: 97bd798f1a10ca245a72044e12924e0c, type: 2}
   m_CullingMode: 1
   m_UpdateMode: 1
   m_ApplyRootMotion: 0
@@ -264,6 +265,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rocket: {fileID: 5000000, guid: 8fde8ec1b330d4bbfb4839f4b41cadc0, type: 2}
   speed: 25
+--- !u!114 &114624342522567234
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1888491685483910}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 0}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &114861548528957784
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -284,6 +296,9 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   jumpForce: 20
+  whatIsGround:
+    serializedVersion: 2
+    m_Bits: 4294966783
 --- !u!114 &114906594920687544
 MonoBehaviour:
   m_ObjectHideFlags: 1
