@@ -25,7 +25,7 @@ public class PlayerHealth : MonoBehaviour
 	}
 
 
-	void GemCreate(){
+	/*void GemCreate(){
 		switch (health)
 		{
 		case 0:
@@ -47,7 +47,7 @@ public class PlayerHealth : MonoBehaviour
 			Console.WriteLine("Default case");
 			break;
 		}
-	}
+	}*/
 
 	void OnCollisionEnter2D (Collision2D col)
     {
