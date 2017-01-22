@@ -168,7 +168,7 @@ Prefab:
     - target: {fileID: 114861548528957784, guid: a09db1cf50642df41927abed2e24cda5,
         type: 2}
       propertyPath: jumpForce
-      value: 30
+      value: 22
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: a09db1cf50642df41927abed2e24cda5, type: 2}
@@ -1417,7 +1417,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 14.8010645
+  orthographic size: 11.84
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -1438,7 +1438,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1785139070}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 10.53, z: -18}
+  m_LocalPosition: {x: 0, y: 0, z: -10}
   m_LocalScale: {x: 2, y: 2, z: 2}
   m_Children: []
   m_Father: {fileID: 439936013}

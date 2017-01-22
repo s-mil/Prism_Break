@@ -8,7 +8,7 @@ public class BossAI : MonoBehaviour
     Random rnd = new Random();
     private bool fired;
     private int shots;
-    private int bossHealth = 1;
+    private int bossHealth = 10;
 
     void Start()
     {
@@ -32,7 +32,7 @@ public class BossAI : MonoBehaviour
 
         if (!fired)
         {
-            Invoke("bossAttack", Random.Range(.1f,1));
+            Invoke("bossAttack", Random.Range(.3f,1));
             fired = true;
         }
         direction = Random.Range(0,2);
