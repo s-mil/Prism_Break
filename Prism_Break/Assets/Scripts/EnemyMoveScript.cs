@@ -12,7 +12,7 @@ public class EnemyMoveScript : MonoBehaviour {
 
     // Use this for initialization
     void Start () {
-		
+		Flip ();
 	}
 	
 	// Update is called once per frame
