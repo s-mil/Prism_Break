@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿
+using UnityEngine;
 using System.Collections;
 
 public class Gun : MonoBehaviour
@@ -9,7 +10,12 @@ public class Gun : MonoBehaviour
 
 	private PlayerControl playerCtrl;		// Reference to the PlayerControl script.
 	private Animator anim;					// Reference to the Animator component.
+    public static bool bulletType;          // Reference to the type of bullet
 
+    public void reverseSpeed()
+    {
+        speed *= -1;
+    }
 
 	void Awake()
 	{
@@ -21,26 +27,35 @@ public class Gun : MonoBehaviour
 
 	void Update ()
 	{
-		// If the fire button is pressed...
-		if(Input.GetButtonDown("Fire1"))
-		{
+        // If the fire button is pressed...
+        if (Input.GetButtonDown("R1") || Input.GetButtonDown("L1"))
+        {
+            if (Input.GetButtonDown("R1"))
+                bulletType = true;
+            else if (Input.GetButtonDown("L1"))
+                bulletType = false;
+
+            Debug.Log("shooting");
 			// ... set the animator Shoot trigger parameter and play the audioclip.
-			anim.SetTrigger("Shoot");
-			GetComponent<AudioSource>().Play();
+			//anim.SetTrigger("Shoot");
+			//GetComponent<AudioSource>().Play();
 
 			// If the player is facing right...
 			if(playerCtrl.facingRight)
 			{
 				// ... instantiate the rocket facing right and set it's velocity to the right. 
 				Rigidbody2D bulletInstance = Instantiate(rocket, transform.position, Quaternion.Euler(new Vector3(0,0,0))) as Rigidbody2D;
+                bulletInstance.position = new Vector2(bulletInstance.position.x + 2f, bulletInstance.position.y);
 				bulletInstance.velocity = new Vector2(speed, 0);
 			}
 			else
 			{
 				// Otherwise instantiate the rocket facing left and set it's velocity to the left.
 				Rigidbody2D bulletInstance = Instantiate(rocket, transform.position, Quaternion.Euler(new Vector3(0,0,180f))) as Rigidbody2D;
-				bulletInstance.velocity = new Vector2(-speed, 0);
+                bulletInstance.position = new Vector2(bulletInstance.position.x - 2f, bulletInstance.position.y);
+                bulletInstance.velocity = new Vector2(-speed, 0);
 			}
 		}
-	}
+
+    }
 }
