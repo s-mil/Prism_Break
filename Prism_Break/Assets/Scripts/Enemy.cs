@@ -16,10 +16,13 @@ public class Enemy : MonoBehaviour
 	private Transform frontCheck;		// Reference to the position of the gameobject used for checking if something is in front.
 	private bool dead = false;			// Whether or not the enemy is dead.
 
+
+	Animator anim;
 	//private Score score;				// Reference to the Score script.
 
 	void Awake()
 	{
+		anim = GetComponent<Animator>();
 		// Setting up the references.
 		//ren = transform.Find("body").GetComponent<SpriteRenderer>();
 		frontCheck = transform.Find("frontCheck").transform;
@@ -53,7 +56,8 @@ public class Enemy : MonoBehaviour
 			ren.sprite = damagedEnemy;
 			
 		// If the enemy has zero or fewer hit points and isn't dead yet...
-		if(HP <= 0 && !dead)
+		if (HP <= 0 && !dead)
+			anim.SetTrigger ("Die");
 			// ... call the death function.
 			Death ();
 	}
