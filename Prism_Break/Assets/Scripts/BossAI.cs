@@ -18,10 +18,8 @@ public class BossAI : MonoBehaviour
     {
         if (col.tag == "Bullet")
         {
-            print("hit");
             bossHealth--;
         }
-            bossHealth--;
     }
     void Update()
     {
