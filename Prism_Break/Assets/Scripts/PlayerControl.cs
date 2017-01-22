@@ -16,8 +16,13 @@ public class PlayerControl : MonoBehaviour
 
 	private Transform groundCheck;			// A position marking where to check if the player is grounded.
 	private bool grounded = false;			// Whether or not the player is grounded.
-	private Animator anim;					// Reference to the player's animator component.
-    private GameObject hero;
+	float groundRadius = .2f;
+	public LayerMask whatIsGround;
+
+	Animator anim;					// Reference to the player's animator component.
+
+
+	private GameObject hero;
 
 
 	void Awake()
@@ -38,19 +43,29 @@ public class PlayerControl : MonoBehaviour
             grounded = false;
 
         // If the jump button is pressed and the player is grounded then the player should jump.
-        if (Input.GetButtonDown("AButton") && grounded)
-            jump = true;
+		if (Input.GetButtonDown ("AButton") && grounded) {
+			jump = true;
+			anim.SetBool ("Ground", false);
+			GetComponent<Rigidbody2D> ().AddForce (new Vector2 (0, jumpForce));
+		}
+			
             
 	}
 
 
 	void FixedUpdate ()
 	{
+		//checks if on ground, may already be done
+		grounded = Physics2D.OverlapCircle(groundCheck.position, groundRadius, whatIsGround);
+		anim.SetBool ("Ground", grounded);
+
+		anim.SetFloat ("vSpeed", GetComponent<Rigidbody2D> ().velocity.y);
+
 		// Cache the horizontal input.
 		float h = Input.GetAxis("LeftJoystickHorizontal");
 
 		// The Speed animator parameter is set to the absolute value of the horizontal input.
-		//anim.SetFloat("Speed", Mathf.Abs(h));
+		anim.SetFloat("Speed", Mathf.Abs(h));
 
 		// If the player is changing direction (h has a different sign to velocity.x) or hasn't reached maxSpeed yet...
 		if(h * GetComponent<Rigidbody2D>().velocity.x < maxSpeed)
