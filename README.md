@@ -7,18 +7,15 @@
   
 ##Controls
 
-The game relys on xinput for controls so using an xbox controller is sugessted, otherwise Dual Shock 4 is supported using a tool such as 
-[DS4 Windows](http://ds4windows.com/) or other controller inputs via [x360ce](http://www.x360ce.com/).
+>The game relys on xinput for controls so using an xbox controller is sugessted, otherwise Dual Shock 4 is supported using a tool such as 
+>[DS4 Windows](http://ds4windows.com/) or other controller inputs via [x360ce](http://www.x360ce.com/).
 
-* Jump
- * X on Play Station Controller
- * A on Xbox Controller
-* Move
- * Left Stick
-* Shoot White
- * Right Bumper
-* Shoot Dark
- * Left Bumper
+Action | Playstation or both |Xbox if different 
+---|---|---
+Jump | X on Play Station Controller | A on Xbox Controller
+Move |Left Stick |
+Shoot White | Right Bumper |
+Shoot Dark | Left Bumper |
 
 * Made using Unity 5.5.0f3
 * Controller drivers for Dual Shock 4:
