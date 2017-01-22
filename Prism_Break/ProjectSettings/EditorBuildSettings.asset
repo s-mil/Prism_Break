@@ -19,3 +19,5 @@ EditorBuildSettings:
     path: Assets/Animation/Scenes/world1.unity
   - enabled: 1
     path: Assets/Animation/Scenes/sceneKill.unity
+  - enabled: 1
+    path: Assets/Animation/Scenes/sceneWin.unity
