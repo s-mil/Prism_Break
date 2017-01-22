@@ -15,6 +15,11 @@ TagManager:
   - HealthBar
   - Boss
   - FireBall
+  - health0
+  - health1
+  - health2
+  - health3
+  - health4
   layers:
   - Default
   - TransparentFX

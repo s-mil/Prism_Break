@@ -1218,7 +1218,7 @@ GameObject:
   - component: {fileID: 238524649}
   m_Layer: 0
   m_Name: healthMeter_4
-  m_TagString: Untagged
+  m_TagString: health0
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2289,7 +2289,7 @@ GameObject:
   - component: {fileID: 512097473}
   m_Layer: 0
   m_Name: healthMeter_0
-  m_TagString: Untagged
+  m_TagString: health4
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3337,7 +3337,7 @@ GameObject:
   - component: {fileID: 751286626}
   m_Layer: 0
   m_Name: healthMeter_1
-  m_TagString: Untagged
+  m_TagString: health3
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3586,6 +3586,16 @@ Prefab:
         type: 2}
       propertyPath: spreadCustomCurve.m_RotationOrder
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114906594920687544, guid: a09db1cf50642df41927abed2e24cda5,
+        type: 2}
+      propertyPath: health
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 114906594920687544, guid: a09db1cf50642df41927abed2e24cda5,
+        type: 2}
+      propertyPath: damageAmount
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 114920220488379224, guid: a09db1cf50642df41927abed2e24cda5, type: 2}
@@ -6425,7 +6435,7 @@ GameObject:
   - component: {fileID: 855271719}
   m_Layer: 0
   m_Name: healthMeter_2
-  m_TagString: Untagged
+  m_TagString: health2
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -8860,7 +8870,7 @@ GameObject:
   - component: {fileID: 1668664986}
   m_Layer: 0
   m_Name: healthMeter_3
-  m_TagString: Untagged
+  m_TagString: health1
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
