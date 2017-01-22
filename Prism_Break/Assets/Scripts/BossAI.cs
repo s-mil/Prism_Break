@@ -32,7 +32,7 @@ public class BossAI : MonoBehaviour
 
         if (!fired)
         {
-            Invoke("bossAttack", Random.Range(.1f,1));
+            Invoke("bossAttack", Random.Range(.3f,1));
             fired = true;
         }
         direction = Random.Range(0,2);
