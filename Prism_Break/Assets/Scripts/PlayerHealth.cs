@@ -3,7 +3,7 @@ using System.Collections;
 
 public class PlayerHealth : MonoBehaviour
 {	
-	public float health = 500000f;					// The player's health.
+	public float health = 5;					// The player's health.
 	public float repeatDamagePeriod = 2f;		// How frequently the player can be damaged.
 	public AudioClip[] ouchClips;				// Array of clips to play when the player is damaged.
 	public float hurtForce = 400f;				// The force with which the player is pushed when hurt.
@@ -21,65 +21,41 @@ public class PlayerHealth : MonoBehaviour
 		playerControl = GetComponent<PlayerControl>();
 		//healthBar = GameObject.Find("HealthBar").GetComponent<SpriteRenderer>();
 		anim = GetComponent<Animator>();
-		//GemCreate ();
+		UpdateHealthBar ();
 	}
 
 
-	/*void GemCreate(){
-		switch (health)
-		{
-		case 0:
-			Application.LoadLevel ("sceneKill");
-			break;
-		case 1:
-			Console.WriteLine("Case 1");
-			break;
-		case 2:
-			Console.WriteLine("Case 2");
-			break;
-		case 3:
-
-		case 4:
-
-		case 5:
-			
-		default:
-			Console.WriteLine("Default case");
-			break;
-		}
-	}*/
-
 	void OnCollisionEnter2D (Collision2D col)
-    {
-        if (col.gameObject.tag == "Enemy")
-            TakeDamage();
-    }
+	{
+		if (col.gameObject.tag == "Enemy")
+			TakeDamage();
+	}
 
-    public void AssessDamage()
-    {
-			// ... and if the time exceeds the time of the last hit plus the time between hits...
-			if (Time.time > lastHitTime + repeatDamagePeriod) 
+	public void AssessDamage()
+	{
+		// ... and if the time exceeds the time of the last hit plus the time between hits...
+		if (Time.time > lastHitTime + repeatDamagePeriod) 
+		{
+			// ... and if the player still has health...
+			if(health > 0f)
 			{
-				// ... and if the player still has health...
-				if(health > 0f)
-				{
-					// ... take damage and reset the lastHitTime.
-					TakeDamage(); 
-					lastHitTime = Time.time; 
-				}
-				// If the player doesn't have health, kill him
-				else
-				{
-					// ... disable user Player Control script
-					GetComponent<PlayerControl>().enabled = false;
-
-					// ... Trigger the 'Die' animation state
-					anim.SetTrigger("Die");
-
-                    // Go to killscreen
-                    Application.LoadLevel("sceneKill");
-                }
+				// ... take damage and reset the lastHitTime.
+				TakeDamage(); 
+				lastHitTime = Time.time; 
 			}
+			// If the player doesn't have health, kill him
+			else
+			{
+				// ... disable user Player Control script
+				GetComponent<PlayerControl>().enabled = false;
+
+				// ... Trigger the 'Die' animation state
+				anim.SetTrigger("Die");
+
+				// Go to killscreen
+				Application.LoadLevel("sceneKill");
+			}
+		}
 	}
 
 
@@ -87,7 +63,7 @@ public class PlayerHealth : MonoBehaviour
 	{
 		// Reduce the player's health by 1.
 		health -= damageAmount;
-        print("health: " + health);
+		print("health: " + health);
 		// Update what the health bar looks like.
 		UpdateHealthBar();
 
@@ -99,6 +75,31 @@ public class PlayerHealth : MonoBehaviour
 
 	public void UpdateHealthBar ()
 	{
-        
+		int intHealth = (int) health;
+
+		switch (intHealth)
+		{
+		case 0:
+			Application.LoadLevel ("sceneKill");
+			break;
+		case 1:
+			Debug.Log (intHealth);
+			break;
+		case 2:
+			Debug.Log (intHealth);
+			break;
+		case 3:
+			Debug.Log (intHealth);
+			break;
+		case 4:
+			Debug.Log (intHealth);
+			break;
+		case 5:
+			Debug.Log (intHealth);
+			break;
+		default:
+			Debug.Log (intHealth);
+			break;
+		}
 	}
 }
