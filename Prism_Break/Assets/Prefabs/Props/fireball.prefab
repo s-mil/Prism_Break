@@ -25,7 +25,7 @@ GameObject:
   - component: {fileID: 114677904083437222}
   m_Layer: 0
   m_Name: fireball
-  m_TagString: Bullet
+  m_TagString: FireBall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
