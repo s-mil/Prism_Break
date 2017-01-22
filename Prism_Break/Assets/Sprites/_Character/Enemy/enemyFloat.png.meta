@@ -1,9 +1,22 @@
 fileFormatVersion: 2
 guid: 222e82d71e3c8354295f0fa4988f6be3
-timeCreated: 1485039019
+timeCreated: 1485044934
 licenseType: Free
 TextureImporter:
-  fileIDToRecycleName: {}
+  fileIDToRecycleName:
+    21300000: enemyFloat_0
+    21300002: enemyFloat_1
+    21300004: enemyFloat_2
+    21300006: enemyFloat_3
+    21300008: enemyFloat_4
+    21300010: enemyFloat_5
+    21300012: enemyFloat_6
+    21300014: enemyFloat_7
+    21300016: enemyFloat_8
+    21300018: enemyFloat_9
+    21300020: enemyFloat_10
+    21300022: enemyFloat_11
+    21300024: enemyFloat_12
   serializedVersion: 4
   mipmaps:
     mipMapMode: 0
@@ -34,7 +47,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -58,9 +71,186 @@ TextureImporter:
     crunchedCompression: 0
     allowsAlphaSplitting: 0
     overridden: 0
+  - buildTarget: Standalone
+    maxTextureSize: 2048
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: enemyFloat_0
+      rect:
+        serializedVersion: 2
+        x: 91
+        y: 85
+        width: 402
+        height: 506
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: enemyFloat_1
+      rect:
+        serializedVersion: 2
+        x: 694
+        y: 70
+        width: 396
+        height: 507
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: enemyFloat_2
+      rect:
+        serializedVersion: 2
+        x: 1291
+        y: 56
+        width: 403
+        height: 505
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: enemyFloat_3
+      rect:
+        serializedVersion: 2
+        x: 1888
+        y: 44
+        width: 397
+        height: 506
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: enemyFloat_4
+      rect:
+        serializedVersion: 2
+        x: 2486
+        y: 30
+        width: 403
+        height: 513
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: enemyFloat_5
+      rect:
+        serializedVersion: 2
+        x: 3079
+        y: 36
+        width: 399
+        height: 508
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: enemyFloat_6
+      rect:
+        serializedVersion: 2
+        x: 3676
+        y: 28
+        width: 397
+        height: 507
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: enemyFloat_7
+      rect:
+        serializedVersion: 2
+        x: 4266
+        y: 44
+        width: 393
+        height: 506
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: enemyFloat_8
+      rect:
+        serializedVersion: 2
+        x: 4856
+        y: 59
+        width: 397
+        height: 506
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: enemyFloat_9
+      rect:
+        serializedVersion: 2
+        x: 5453
+        y: 70
+        width: 393
+        height: 507
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: enemyFloat_10
+      rect:
+        serializedVersion: 2
+        x: 6047
+        y: 89
+        width: 396
+        height: 506
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: enemyFloat_11
+      rect:
+        serializedVersion: 2
+        x: 6638
+        y: 85
+        width: 399
+        height: 507
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: enemyFloat_12
+      rect:
+        serializedVersion: 2
+        x: 7237
+        y: 89
+        width: 400
+        height: 506
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
     outline: []
   spritePackingTag: 
   userData: 
