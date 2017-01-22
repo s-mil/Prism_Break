@@ -1,5 +1,4 @@
-﻿
-using UnityEngine;
+﻿using UnityEngine;
 using System.Collections;
 
 public class Gun : MonoBehaviour
@@ -37,8 +36,8 @@ public class Gun : MonoBehaviour
 
             Debug.Log("shooting");
 			// ... set the animator Shoot trigger parameter and play the audioclip.
-			//anim.SetTrigger("Shoot");
-			//GetComponent<AudioSource>().Play();
+			anim.SetTrigger("Shoot");
+			GetComponent<AudioSource>().Play();
 
 			// If the player is facing right...
 			if(playerCtrl.facingRight)

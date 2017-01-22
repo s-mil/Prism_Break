@@ -39,7 +39,7 @@ public class Rocket : MonoBehaviour
         if (enemy != null)
         {
             if (col.tag == "Enemy" && (enemy.type == Gun.bulletType))
-            {
+            {   
                 // ... find the Enemy script and call the Hurt function.
                 col.gameObject.GetComponent<Enemy>().Hurt();
 

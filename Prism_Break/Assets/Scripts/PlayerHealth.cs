@@ -36,7 +36,7 @@ public class PlayerHealth : MonoBehaviour
 				if(health > 0f)
 				{
 					// ... take damage and reset the lastHitTime.
-					TakeDamage(col.transform); 
+					TakeDamage(); 
 					lastHitTime = Time.time; 
 				}
 				// If the player doesn't have health, kill him
@@ -56,7 +56,7 @@ public class PlayerHealth : MonoBehaviour
 	}
 
 
-	void TakeDamage (Transform enemy)
+	public void TakeDamage ()
 	{
 		// Reduce the player's health by 1.
 		health -= damageAmount;
