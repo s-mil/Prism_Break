@@ -32,7 +32,6 @@ public class PlayerHealth : MonoBehaviour
 
     public void AssessDamage()
     {
-
 			// ... and if the time exceeds the time of the last hit plus the time between hits...
 			if (Time.time > lastHitTime + repeatDamagePeriod) 
 			{
