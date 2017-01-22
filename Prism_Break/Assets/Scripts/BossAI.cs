@@ -8,7 +8,7 @@ public class BossAI : MonoBehaviour
     Random rnd = new Random();
     private bool fired;
     private int shots;
-    private int bossHealth = 1;
+    private int bossHealth = 10;
 
     void Start()
     {
