@@ -34,25 +34,35 @@ public class Rocket : MonoBehaviour
 	
 	void OnTriggerEnter2D (Collider2D col) 
 	{
-        Debug.Log(gameObject.name);
         // If a bullet hits an enemy of the same type
-        if (col.tag == "Enemy" && (Enemy.enemyType == Gun.bulletType))
+        EnemyMoveScript enemy = col.gameObject.GetComponent<EnemyMoveScript>();
+        if (enemy != null)
         {
-            // ... find the Enemy script and call the Hurt function.
-            col.gameObject.GetComponent<Enemy>().Hurt();
+            if (col.tag == "Enemy" && (enemy.type == Gun.bulletType))
+            {
+                // ... find the Enemy script and call the Hurt function.
+                col.gameObject.GetComponent<Enemy>().Hurt();
 
-            // Call the explosion instantiation.
-            OnExplode();
+                // Call the explosion instantiation.
+                OnExplode();
 
-            // Destroy the rocket.
-            Destroy(gameObject);
-            Destroy(col.gameObject);
+                // Destroy the rocket.
+                Destroy(gameObject);
+                Destroy(col.gameObject);
+            }
+            // If a bullet hits an enemy of the wrong type
+            else if (col.tag == "Enemy" && (enemy.type != Gun.bulletType))
+            {
+                Debug.Log("Mis-Type Collision");
+                GetComponent<Rigidbody2D>().velocity = new Vector2(GetComponent<Rigidbody2D>().velocity.x * -1f, GetComponent<Rigidbody2D>().velocity.y);
+            }
         }
-        // If a bullet hits an enemy of the wrong type
-        else if (col.tag == "Enemy" && (Enemy.enemyType != Gun.bulletType))
+        // Otherwise if the player manages to shoot himself...
+        else if (col.gameObject.tag == "Player")
         {
-            Debug.Log("Mis-Type Collision");
-            GetComponent<Rigidbody2D>().velocity = new Vector2(GetComponent<Rigidbody2D>().velocity.x * -1f, GetComponent<Rigidbody2D>().velocity.y);
+            // Instantiate the explosion and destroy the rocket.
+            OnExplode();
+            Destroy(gameObject);
         }
 
         // Otherwise if the player manages to shoot himself...
@@ -62,13 +72,5 @@ public class Rocket : MonoBehaviour
             OnExplode();
             Destroy(gameObject);
         }
-
-	    // Otherwise if the player manages to shoot himself...
-	    else if(col.gameObject.tag == "Player")
-	    {
-		    // Instantiate the explosion and destroy the rocket.
-		    OnExplode();
-		    Destroy (gameObject);
-	    }
 	}
 }

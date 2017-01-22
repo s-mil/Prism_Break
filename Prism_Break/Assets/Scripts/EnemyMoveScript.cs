@@ -6,6 +6,7 @@ public class EnemyMoveScript : MonoBehaviour {
 
 	public float moveSpeed;
 	public int HP = 2;
+    public bool type = true;
 
 	// Use this for initialization
 	void Start () {
@@ -14,8 +15,17 @@ public class EnemyMoveScript : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		
-		transform.Translate (new Vector3 (moveSpeed, 0, 0) * Time.deltaTime);
+
+        float testx = this.transform.position.x / (64 / Mathf.PI);
+        float line = Mathf.Cos(Time.realtimeSinceStartup * Mathf.PI + 0.5890486f + testx);
+        
+        if (line > this.transform.position.y / 36 != this.type)
+        {
+            this.type = !this.type;
+            //Executes when flips (Or reasonably close)
+        }
+
+        transform.Translate (new Vector3 (moveSpeed, 0, 0) * Time.deltaTime);
 		if (transform.position.x <= -100 || transform.position.x >= 100) {
 			Flip ();
 			moveSpeed *= -1;
