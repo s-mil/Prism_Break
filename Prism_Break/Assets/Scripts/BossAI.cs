@@ -8,6 +8,7 @@ public class BossAI : MonoBehaviour
     Random rnd = new Random();
     private bool fired;
     private int shots;
+    private int health = 10;
 
     void Start()
     {
@@ -15,6 +16,11 @@ public class BossAI : MonoBehaviour
     }
     void Update()
     {
+        if (collider.gameObject.tag == "bullet")
+        {
+            health--;
+        }
+)
         if (!fired)
         {
             Invoke("bossAttack", Random.Range(.1f,1));
